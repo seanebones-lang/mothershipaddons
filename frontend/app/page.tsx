@@ -49,13 +49,20 @@ export default function Dashboard() {
   })
 
   // Check API health
-  const { data: healthStatus } = useQuery({
+  const { data: healthStatus, isSuccess, isError } = useQuery({
     queryKey: ['health'],
     queryFn: () => apiClient.readinessCheck(),
     refetchInterval: 30000,
-    onSuccess: () => setIsConnected(true),
-    onError: () => setIsConnected(false),
   })
+
+  // Update connection status based on query state
+  useEffect(() => {
+    if (isSuccess) {
+      setIsConnected(true)
+    } else if (isError) {
+      setIsConnected(false)
+    }
+  }, [isSuccess, isError])
 
   const activeAgents = agents.filter(agent => agent.status === 'active')
   const completedTasks = recentTasks.filter(task => task.status === 'completed')
@@ -76,11 +83,11 @@ export default function Dashboard() {
               <Brain className="h-8 w-8 text-white" />
             </div>
             <h1 className="text-5xl font-bold gradient-text">
-              ELCA Blockbusters
+              ELCA AI Platform
             </h1>
           </div>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            AI-powered ministry tools designed for ELCA congregations with radical hospitality, 
+            Enterprise AI solutions designed for ELCA congregations with radical hospitality, 
             grace-centered faith, and justice advocacy at the core
           </p>
           <div className="flex items-center justify-center gap-4">
@@ -288,19 +295,19 @@ export default function Dashboard() {
         </Card>
 
         {/* Footer */}
-        <div className="text-center text-sm text-muted-foreground space-y-2">
-          <p>
-            ELCA Blockbusters • Built with ❤️ for ELCA congregations
-          </p>
-          <p>
-            Powered by multi-provider AI (Claude Sonnet 4.5, OpenAI GPT-4, X.ai Grok) with ELCA 2025 AI Guidelines compliance
-          </p>
-          <div className="flex justify-center gap-4 mt-4">
-            <Badge variant="outline">48-Hour MVP</Badge>
-            <Badge variant="outline">Bishop Demo Ready</Badge>
-            <Badge variant="outline">$250k → $15M ROI</Badge>
-          </div>
-        </div>
+            <div className="text-center text-sm text-muted-foreground space-y-2">
+              <p>
+                ELCA AI Platform • Enterprise Solutions for Lutheran Congregations
+              </p>
+              <p>
+                Powered by advanced AI technology with ELCA 2025 AI Guidelines compliance
+              </p>
+              <div className="flex justify-center gap-4 mt-4">
+                <Badge variant="outline">Enterprise Ready</Badge>
+                <Badge variant="outline">ELCA Compliant</Badge>
+                <Badge variant="outline">Multi-Provider AI</Badge>
+              </div>
+            </div>
       </div>
     </div>
   )

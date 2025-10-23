@@ -68,14 +68,23 @@ export function GenZDashboard({ agentId }: GenZDashboardProps) {
       }, 300)
 
       try {
+        // First create a directive for content generation
+        const directive = await apiClient.createDirective(
+          `Generate ${platform} content for ${ageGroup} about ${topic}`,
+          'content_generation',
+          { platform, ageGroup, topic, journeyTheme: journeyTheme || undefined }
+        )
+
+        // Then create a task with the directive
         const result = await apiClient.createTask({
           agent_id: agentId,
+          directive_id: directive.id,
           input_data: data
         })
-        
+
         clearInterval(progressInterval)
         setProgress(100)
-        
+
         return result
       } catch (error) {
         clearInterval(progressInterval)

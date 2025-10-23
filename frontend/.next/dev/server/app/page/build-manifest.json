@@ -1,0 +1,22 @@
+{
+  "devFiles": [],
+  "ampDevFiles": [],
+  "polyfillFiles": [
+    "static/chunks/931b6_next_dist_build_polyfills_polyfill-nomodule.js"
+  ],
+  "lowPriorityFiles": [],
+  "rootMainFiles": [
+    "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_bdd43df0._.js",
+    "static/chunks/931b6_next_dist_compiled_react-dom_6e6c82dd._.js",
+    "static/chunks/931b6_next_dist_compiled_react-server-dom-turbopack_406577cb._.js",
+    "static/chunks/931b6_next_dist_compiled_next-devtools_index_b172ed5b.js",
+    "static/chunks/931b6_next_dist_compiled_17337ea8._.js",
+    "static/chunks/931b6_next_dist_client_d6ce4835._.js",
+    "static/chunks/931b6_next_dist_f194fe3a._.js",
+    "static/chunks/931b6_@swc_helpers_cjs_0df9b1e2._.js",
+    "static/chunks/Desktop_Mothership add ons_elca-blockbusters_frontend_a0ff3932._.js",
+    "static/chunks/turbopack-Desktop_Mothership add ons_elca-blockbusters_frontend_4ef03e2f._.js"
+  ],
+  "pages": {},
+  "ampFirstPages": []
+}

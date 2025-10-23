@@ -5,7 +5,6 @@ const nextConfig = {
   images: {
     unoptimized: true
   },
-  distDir: 'out',
   typescript: {
     ignoreBuildErrors: true,
   },

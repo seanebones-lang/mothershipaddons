@@ -63,8 +63,17 @@ export function SermonGenerator({ agentId }: SermonGeneratorProps) {
       }, 200)
 
       try {
+        // First create a directive for sermon generation
+        const directive = await apiClient.createDirective(
+          `Generate sermon on ${data.topic} from ${data.scripture}`,
+          'sermon_generation',
+          { topic: data.topic, scripture: data.scripture, length: data.length }
+        )
+
+        // Then create a task with the directive
         const result = await apiClient.createTask({
           agent_id: agentId,
+          directive_id: directive.id,
           input_data: {
             type: 'sermon',
             topic: data.topic,
@@ -72,10 +81,10 @@ export function SermonGenerator({ agentId }: SermonGeneratorProps) {
             length: data.length
           }
         })
-        
+
         clearInterval(progressInterval)
         setProgress(100)
-        
+
         return result
       } catch (error) {
         clearInterval(progressInterval)

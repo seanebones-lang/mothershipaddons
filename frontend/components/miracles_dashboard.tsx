@@ -71,14 +71,23 @@ export function MiraclesDashboard({ agentId }: MiraclesDashboardProps) {
       }, 250)
 
       try {
+        // First create a directive for mission planning
+        const directive = await apiClient.createDirective(
+          `Plan mission: ${mission}`,
+          'mission_planning',
+          { volunteerCount, focusArea, project, budget }
+        )
+
+        // Then create a task with the directive
         const result = await apiClient.createTask({
           agent_id: agentId,
+          directive_id: directive.id,
           input_data: data
         })
-        
+
         clearInterval(progressInterval)
         setProgress(100)
-        
+
         return result
       } catch (error) {
         clearInterval(progressInterval)

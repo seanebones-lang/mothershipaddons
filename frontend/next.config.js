@@ -1,10 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Standard Next.js deployment - dynamic dashboard needs API access
+  output: 'export',
   trailingSlash: true,
   images: {
     unoptimized: true
   },
+  distDir: 'out',
   typescript: {
     ignoreBuildErrors: true,
   },

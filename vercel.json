@@ -1,7 +1,6 @@
 {
-  "buildCommand": "cd frontend && npm install && npm run build",
-  "outputDirectory": "frontend/out",
-  "installCommand": "echo 'Skipping install'",
-  "framework": null
+  "github": {
+    "silent": true
+  }
 }
 

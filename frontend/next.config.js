@@ -2,6 +2,7 @@
 const nextConfig = {
   // Standard Next.js configuration - no static export
   // This enables runtime API calls and dynamic content
+  // Force Vercel to use latest configuration
   trailingSlash: true,
   images: {
     unoptimized: true

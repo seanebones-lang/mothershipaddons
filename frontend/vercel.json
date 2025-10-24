@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/api/:path*",
-      "destination": "https://elca-blockbusters-api.onrender.com/api/:path*"
+      "destination": "https://elca-mothership-api.onrender.com/api/:path*"
     }
   ]
 }

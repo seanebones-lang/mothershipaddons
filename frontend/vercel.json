@@ -4,5 +4,8 @@
       "source": "/api/:path*",
       "destination": "https://elca-ai-platform-api.onrender.com/api/:path*"
     }
-  ]
+  ],
+  "env": {
+    "NEXT_PUBLIC_API_URL": "https://elca-ai-platform-api.onrender.com"
+  }
 }

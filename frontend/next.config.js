@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Remove static export to enable runtime API calls
-  // output: 'export',
+  // Standard Next.js configuration - no static export
+  // This enables runtime API calls and dynamic content
   trailingSlash: true,
   images: {
     unoptimized: true

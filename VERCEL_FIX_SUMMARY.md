@@ -45,6 +45,20 @@ Route (app)                              Size     First Load JS
 
 ## Deployment Instructions
 
+### IMPORTANT: Update Vercel Project Settings First
+
+Before deploying, you MUST update your Vercel project settings:
+
+1. Go to your Vercel dashboard: https://vercel.com/dashboard
+2. Select your project
+3. Go to "Settings" → "General"
+4. Under "Build & Development Settings":
+   - **Root Directory**: Set to `elca-blockbusters/frontend`
+   - **Framework Preset**: Next.js
+   - **Build Command**: `npm run build`
+   - **Output Directory**: `out`
+5. Click "Save"
+
 ### Option 1: Redeploy on Vercel (Recommended)
 1. Commit all changes to your repository:
    ```bash

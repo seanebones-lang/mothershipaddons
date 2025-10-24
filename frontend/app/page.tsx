@@ -28,10 +28,12 @@ export default function Dashboard() {
   const [selectedTab, setSelectedTab] = useState('pastor')
 
   // Fetch agents
-  const { data: agents = [], isLoading: agentsLoading } = useQuery({
+  const { data: agents = [], isLoading: agentsLoading, error: agentsError } = useQuery({
     queryKey: ['agents'],
     queryFn: () => apiClient.getAgents(),
     refetchInterval: 30000, // Refetch every 30 seconds
+    retry: 3,
+    retryDelay: 1000,
   })
 
   // Fetch recent tasks
@@ -39,6 +41,8 @@ export default function Dashboard() {
     queryKey: ['tasks', 'recent'],
     queryFn: () => apiClient.getRecentTasks(10),
     refetchInterval: 10000, // Refetch every 10 seconds
+    retry: 2,
+    retryDelay: 1000,
   })
 
   // Fetch ontology summary
@@ -46,6 +50,7 @@ export default function Dashboard() {
     queryKey: ['ontology', 'summary'],
     queryFn: () => apiClient.getOntologySummary(),
     refetchInterval: 60000, // Refetch every minute
+    retry: 2,
   })
 
   // Check API health
@@ -53,6 +58,8 @@ export default function Dashboard() {
     queryKey: ['health'],
     queryFn: () => apiClient.readinessCheck(),
     refetchInterval: 30000,
+    retry: 3,
+    retryDelay: 1000,
   })
 
   // Update connection status based on query state
@@ -72,6 +79,15 @@ export default function Dashboard() {
   const pastoralAgent = agents.find(agent => agent.agent_type === 'pastoral_care')
   const youthAgent = agents.find(agent => agent.agent_type === 'youth_engagement')
   const missionAgent = agents.find(agent => agent.agent_type === 'mission_coordination')
+
+  // Debug logging
+  useEffect(() => {
+    console.log('Agents loaded:', agents)
+    console.log('Pastoral agent:', pastoralAgent)
+    console.log('Youth agent:', youthAgent)
+    console.log('Mission agent:', missionAgent)
+    console.log('Agents error:', agentsError)
+  }, [agents, pastoralAgent, youthAgent, missionAgent, agentsError])
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">

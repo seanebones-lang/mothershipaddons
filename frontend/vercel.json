@@ -1,6 +1,7 @@
 {
-  "buildCommand": "npm run build",
+  "buildCommand": "cd /vercel/path0/frontend && npm run build",
   "outputDirectory": "out",
+  "installCommand": "cd /vercel/path0/frontend && npm install",
   "rewrites": [
     {
       "source": "/api/:path*",
@@ -8,7 +9,7 @@
     }
   ],
   "cleanUrls": true,
-  "trailingSlash": false,
+  "trailingSlash": true,
   "headers": [
     {
       "source": "/(.*)",

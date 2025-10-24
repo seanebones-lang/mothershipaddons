@@ -1,15 +1,10 @@
 {
-  "buildCommand": "cd /vercel/path0/frontend && npm run build",
-  "outputDirectory": "out",
-  "installCommand": "cd /vercel/path0/frontend && npm install",
   "rewrites": [
     {
       "source": "/api/:path*",
       "destination": "https://elca-blockbusters-api.onrender.com/api/:path*"
     }
   ],
-  "cleanUrls": true,
-  "trailingSlash": true,
   "headers": [
     {
       "source": "/(.*)",
@@ -28,8 +23,5 @@
         }
       ]
     }
-  ],
-  "env": {
-    "NEXT_PUBLIC_API_URL": "https://elca-blockbusters-api.onrender.com"
-  }
+  ]
 }

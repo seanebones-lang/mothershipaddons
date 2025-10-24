@@ -1,3 +1,0 @@
-module.exports=[5442,(a,b,c)=>{let{createClientModuleProxy:d}=a.r(76017);a.n(d("[project]/Desktop/Mothership add ons/elca-blockbusters/frontend/node_modules/next/dist/client/components/builtin/global-error.js <module evaluation>"))},85223,(a,b,c)=>{let{createClientModuleProxy:d}=a.r(76017);a.n(d("[project]/Desktop/Mothership add ons/elca-blockbusters/frontend/node_modules/next/dist/client/components/builtin/global-error.js"))},43768,a=>{"use strict";a.i(5442);var b=a.i(85223);a.n(b)}];
-
-//# sourceMappingURL=931b6_next_dist_client_components_builtin_global-error_1bdb3992.js.map

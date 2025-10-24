@@ -1,51 +1,6 @@
-# Dependencies
-node_modules/
-
-# Next.js build output (since we're using static export)
-.next/
-
-# Development files
-.env*
-
-# Logs
+node_modules
+.next
+out/dev
+.env*.local
 *.log
-
-# Runtime data
-pids
-*.pid
-*.seed
-*.pid.lock
-
-# Coverage
-coverage/
-
-# Cache directories
-.cache/
-.parcel-cache/
-
-# Optional npm cache directory
-.npm
-
-# Optional eslint cache
-.eslintcache
-
-# TypeScript
-*.tsbuildinfo
-
-# Development and testing
-*.test.*
-*.spec.*
-__tests__/
-jest.config.*
-cypress/
-cypress.json
-
-# IDE files
-.vscode/
-.idea/
-*.swp
-*.swo
-
-# OS files
 .DS_Store
-Thumbs.db

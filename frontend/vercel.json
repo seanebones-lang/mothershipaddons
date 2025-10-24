@@ -1,8 +1,5 @@
 {
-  "framework": null,
   "buildCommand": "npm run build",
-  "devCommand": null,
-  "installCommand": "npm install",
   "outputDirectory": "out",
   "rewrites": [
     {
@@ -10,6 +7,8 @@
       "destination": "https://elca-blockbusters-api.onrender.com/api/:path*"
     }
   ],
+  "cleanUrls": true,
+  "trailingSlash": false,
   "headers": [
     {
       "source": "/(.*)",

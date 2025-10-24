@@ -1,14 +1,10 @@
-import type { Metadata } from 'next'
+'use client'
+
 import { Inter } from 'next/font/google'
 import './globals.css'
 import { Providers } from './providers'
 
 const inter = Inter({ subsets: ['latin'] })
-
-export const metadata: Metadata = {
-  title: 'ELCA Blockbusters - AI Ministry Tools',
-  description: 'AI-powered ministry tools for ELCA congregations',
-}
 
 export default function RootLayout({
   children,
@@ -16,7 +12,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <title>ELCA Blockbusters - AI Ministry Tools</title>
+        <meta name="description" content="AI-powered ministry tools for ELCA congregations" />
+      </head>
       <body className={inter.className}>
         <Providers>
           {children}

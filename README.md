@@ -1,6 +1,12 @@
-# ELCA add ons
+# ELCA Blockbusters - Documentation & Guides
 
 > **AI-powered ministry tools for ELCA congregations with radical hospitality, grace-centered faith, and justice advocacy at the core.**
+
+## Repositories (Split Architecture)
+
+- **Frontend:** https://github.com/seanebones-lang/eclathree (Next.js 16.0.0)
+- **Backend:** https://github.com/seanebones-lang/eclabackthree (FastAPI 0.120.0)
+- **Documentation:** This repository (guides, deployment configs)
 
 ## 🚀 Live Demo URLs
 

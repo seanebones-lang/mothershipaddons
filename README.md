@@ -1,4 +1,4 @@
-# ELCA Blockbusters - 48 Hour MVP
+# ELCA add ons
 
 > **AI-powered ministry tools for ELCA congregations with radical hospitality, grace-centered faith, and justice advocacy at the core.**
 

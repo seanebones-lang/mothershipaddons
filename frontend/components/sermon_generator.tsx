@@ -41,15 +41,24 @@ export function SermonGenerator({ agentId }: SermonGeneratorProps) {
   const queryClient = useQueryClient()
 
   // Get recent sermons
-  const { data: recentTasks = [] } = useQuery({
+  const { data: recentTasks = [], error: tasksError } = useQuery({
     queryKey: ['tasks', 'pastoral'],
-    queryFn: () => apiClient.getRecentTasks(5),
+    queryFn: async () => {
+      try {
+        return await apiClient.getRecentTasks(5)
+      } catch (err) {
+        console.error('Failed to fetch tasks:', err)
+        return []
+      }
+    },
     refetchInterval: 5000,
+    enabled: !!agentId, // Only run if agentId exists
+    retry: 1,
   })
 
-  const pastoralTasks = recentTasks.filter(task => 
-    task.agent_id === agentId && 
-    task.input_data.type === 'sermon'
+  const pastoralTasks = (Array.isArray(recentTasks) ? recentTasks : []).filter(task => 
+    task?.agent_id === agentId && 
+    task?.input_data?.type === 'sermon'
   )
 
   const generateSermon = useMutation({

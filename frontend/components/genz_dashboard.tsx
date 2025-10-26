@@ -49,12 +49,21 @@ export function GenZDashboard({ agentId }: GenZDashboardProps) {
   // Get recent youth engagement tasks
   const { data: recentTasks = [] } = useQuery({
     queryKey: ['tasks', 'youth'],
-    queryFn: () => apiClient.getRecentTasks(5),
+    queryFn: async () => {
+      try {
+        return await apiClient.getRecentTasks(5)
+      } catch (err) {
+        console.error('Failed to fetch tasks:', err)
+        return []
+      }
+    },
     refetchInterval: 5000,
+    enabled: !!agentId,
+    retry: 1,
   })
 
-  const youthTasks = recentTasks.filter(task => 
-    task.agent_id === agentId
+  const youthTasks = (Array.isArray(recentTasks) ? recentTasks : []).filter(task => 
+    task?.agent_id === agentId
   )
 
   const generateContent = useMutation({

@@ -52,12 +52,21 @@ export function MiraclesDashboard({ agentId }: MiraclesDashboardProps) {
   // Get recent mission tasks
   const { data: recentTasks = [] } = useQuery({
     queryKey: ['tasks', 'mission'],
-    queryFn: () => apiClient.getRecentTasks(5),
+    queryFn: async () => {
+      try {
+        return await apiClient.getRecentTasks(5)
+      } catch (err) {
+        console.error('Failed to fetch tasks:', err)
+        return []
+      }
+    },
     refetchInterval: 5000,
+    enabled: !!agentId,
+    retry: 1,
   })
 
-  const missionTasks = recentTasks.filter(task => 
-    task.agent_id === agentId
+  const missionTasks = (Array.isArray(recentTasks) ? recentTasks : []).filter(task => 
+    task?.agent_id === agentId
   )
 
   const generatePlan = useMutation({

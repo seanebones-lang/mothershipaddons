@@ -63,17 +63,9 @@ export function SermonGenerator({ agentId }: SermonGeneratorProps) {
       }, 200)
 
       try {
-        // First create a directive for sermon generation
-        const directive = await apiClient.createDirective(
-          `Generate sermon on ${data.topic} from ${data.scripture}`,
-          'sermon_generation',
-          { topic: data.topic, scripture: data.scripture, length: data.length }
-        )
-
-        // Then create a task with the directive
+        // Create a task directly for sermon generation
         const result = await apiClient.createTask({
           agent_id: agentId,
-          directive_id: directive.id,
           input_data: {
             type: 'sermon',
             topic: data.topic,

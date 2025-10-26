@@ -2,7 +2,7 @@
  * API client for ELCA Blockbusters backend
  */
 
-const API_BASE_URL = 'https://elca-ai-platform-api.onrender.com'
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'
 
 export interface Agent {
   id: string

@@ -71,17 +71,9 @@ export function MiraclesDashboard({ agentId }: MiraclesDashboardProps) {
       }, 250)
 
       try {
-        // First create a directive for mission planning
-        const directive = await apiClient.createDirective(
-          `Plan mission: ${mission}`,
-          'mission_planning',
-          { volunteerCount, focusArea, project, budget }
-        )
-
-        // Then create a task with the directive
+        // Create a task directly for mission planning
         const result = await apiClient.createTask({
           agent_id: agentId,
-          directive_id: directive.id,
           input_data: data
         })
 

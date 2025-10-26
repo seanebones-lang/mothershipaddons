@@ -16,7 +16,6 @@ export const TaskSchema = z.object({
   id: z.string(),
   user_id: z.string().nullable(),
   agent_id: z.string(),
-  directive_id: z.string(),
   input_data: z.record(z.any()),
   output_data: z.record(z.any()).nullable(),
   status: z.enum(['pending', 'in_progress', 'completed', 'failed', 'cancelled']),
@@ -62,7 +61,6 @@ export const OntologySummarySchema = z.object({
 export const CreateTaskSchema = z.object({
   user_id: z.string().optional(),
   agent_id: z.string(),
-  directive_id: z.string(),
   input_data: z.record(z.any()),
 })
 

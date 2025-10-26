@@ -2,15 +2,12 @@
   "rewrites": [
     {
       "source": "/api/:path*",
-      "destination": "https://elca-ai-platform-api.onrender.com/api/:path*"
+      "destination": "https://elca-blockbusters-api.onrender.com/api/:path*"
     }
   ],
-  "env": {
-    "NEXT_PUBLIC_API_URL": "https://elca-ai-platform-api.onrender.com"
-  },
   "functions": {
-    "app/page.tsx": {
-      "maxDuration": 30
+    "app/**/*.tsx": {
+      "maxDuration": 60
     }
   }
 }

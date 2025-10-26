@@ -30,7 +30,7 @@ URL: https://elca-blockbusters.vercel.app
 ---
 
 ### 2. Backend Repository  
-**🔗 https://github.com/seanebones-lang/eclabackthree**
+**🔗 https://github.com/seanebones-lang/elcabackone**
 
 ```
 Stack: FastAPI 0.120.0 + Python 3.11
@@ -75,7 +75,7 @@ Deploy: Documentation only (no deployment needed)
 | Component | Repository | Deploy To | Status |
 |-----------|-----------|-----------|--------|
 | **Frontend** | [eclathree](https://github.com/seanebones-lang/eclathree) | Vercel | ✅ Pushed |
-| **Backend** | [eclabackthree](https://github.com/seanebones-lang/eclabackthree) | Render | ✅ Pushed |
+| **Backend** | [elcabackone](https://github.com/seanebones-lang/elcabackone) | Render | ✅ Pushed |
 | **Docs** | [mothershipaddons](https://github.com/seanebones-lang/mothershipaddons) | N/A | ✅ Updated |
 
 ---
@@ -102,7 +102,7 @@ The `frontend/` and `backend/` folders still exist here for local development, t
 
 1. Go to https://render.com
 2. Click **New +** → **Web Service**
-3. Connect: **eclabackthree** repository
+3. Connect: **elcabackone** repository
 4. Render auto-detects `render.yaml`
 5. Add environment variables (API keys)
 6. Click **Create Web Service**
@@ -136,7 +136,7 @@ mothershipaddons/
 
 ### After (Split Repos)
 ```
-eclabackthree/      ← Backend only
+elcabackone/      ← Backend only
 ├── main.py
 ├── requirements.txt
 └── render.yaml
@@ -165,7 +165,7 @@ mothershipaddons/   ← Documentation hub
 
 ✅ **Team Collaboration**
 - UI/UX team works in eclathree
-- AI/ML team works in eclabackthree
+- AI/ML team works in elcabackone
 - No merge conflicts
 
 ✅ **Better Security**
@@ -202,8 +202,8 @@ git push origin main
 
 ### Work on Backend
 ```bash
-git clone https://github.com/seanebones-lang/eclabackthree.git
-cd eclabackthree
+git clone https://github.com/seanebones-lang/elcabackone.git
+cd elcabackone
 pip install -r requirements.txt
 uvicorn main:app --reload
 # Make changes
@@ -218,7 +218,7 @@ git push origin main
 ## Migration Checklist
 
 - [x] Frontend code extracted to eclathree
-- [x] Backend code extracted to eclabackthree
+- [x] Backend code extracted to elcabackone
 - [x] Both repos initialized with git
 - [x] All files committed with proper messages
 - [x] Both repos pushed to GitHub
@@ -242,7 +242,7 @@ git push origin main
 ### Backend  
 - **API:** https://elca-blockbusters-api.onrender.com
 - **Docs:** https://elca-blockbusters-api.onrender.com/docs
-- **Repo:** https://github.com/seanebones-lang/eclabackthree
+- **Repo:** https://github.com/seanebones-lang/elcabackone
 - **Deploy:** Render (auto on git push)
 
 ---
@@ -272,7 +272,7 @@ Total:            $27/month
 ### Quick Deploy
 
 1. **Backend first:**
-   - Render → New Web Service → Connect eclabackthree
+   - Render → New Web Service → Connect elcabackone
    - Add API keys in environment variables
    - Deploy
 

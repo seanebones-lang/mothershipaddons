@@ -648,7 +648,7 @@
 
 ### Repository Links
 - [ ] Frontend repo link works (eclathree)
-- [ ] Backend repo link works (eclabackthree)
+- [ ] Backend repo link works (elcabackone)
 - [ ] Documentation repo link works (mothershipaddons)
 - [ ] All URLs are accessible
 - [ ] GitHub repos are public/accessible

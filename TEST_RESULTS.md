@@ -596,9 +596,9 @@ Zero npm vulnerabilities ✅
 ✅ vercel.json: Deployment config ready
 ```
 
-### Backend Repository (eclabackthree)
+### Backend Repository (elcabackone)
 ```
-✅ Repository: https://github.com/seanebones-lang/eclabackthree
+✅ Repository: https://github.com/seanebones-lang/elcabackone
 ✅ Files: 10 committed  
 ✅ Lines: ~2,000
 ✅ Latest commit: 5e85e3b (concurrent worker fix)
@@ -631,7 +631,7 @@ Step 10: ✅ All 3 tabs functional
 ### Production Deployment Flow
 ```
 Step 1: ✅ Push code to GitHub
-Step 2: ✅ Connect Render to eclabackthree
+Step 2: ✅ Connect Render to elcabackone
 Step 3: ✅ Add environment variables in Render
 Step 4: ✅ Deploy backend
 Step 5: ✅ Connect Vercel to eclathree
@@ -721,7 +721,7 @@ Step 10: ✅ Monitor logs for errors
 - [x] Production build successful
 
 ### Ready for Production
-- [x] Backend repo: eclabackthree
+- [x] Backend repo: elcabackone
 - [x] Frontend repo: eclathree
 - [x] Render configuration: render.yaml + Procfile
 - [x] Vercel configuration: vercel.json

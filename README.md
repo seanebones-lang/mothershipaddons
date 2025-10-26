@@ -5,7 +5,7 @@
 ## Repositories (Split Architecture)
 
 - **Frontend:** https://github.com/seanebones-lang/eclathree (Next.js 16.0.0)
-- **Backend:** https://github.com/seanebones-lang/eclabackthree (FastAPI 0.120.0)
+- **Backend:** https://github.com/seanebones-lang/elcabackone (FastAPI 0.120.0)
 - **Documentation:** This repository (guides, deployment configs)
 
 ## 🚀 Live Demo URLs
